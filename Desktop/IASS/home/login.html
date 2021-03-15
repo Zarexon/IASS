@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Pharma</title>
+  <style>
+    nav ul a {
+      text-decoration: none;
+      color: saddlebrown;
+    }
+  </style>
+</head>
+
+<body class="grey lighten-3">
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <div href="#" class="brand-logo">
+        <h5
+          style="color: white; margin-bottom: 5px; padding: 5px; border-radius: 10px; 
+        background: linear-gradient(180deg, rgba(217,224,224,1) 0%, rgba(165,196,196,1) 50%, rgba(100,119,121,1) 100%);">
+          Pharma
+        </h5>
+      </div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+        <li><a href="#" class="red-text modal-trigger" data-target="modal-login">Login</a></li>
+        <li><a href="#" class="red-text modal-trigger" data-target="modal-register">Sign up</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- REGISTER MODAL -->
+  <div id="modal-register" class="modal">
+    <div class="modal-content">
+      <h4>Register</h4><br />
+      <form id="register-form">
+        <div class="input-field">
+          <input type="email" id="register-email" required />
+          <label for="register-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="register-password" required />
+          <label for="register-password">Your password</label>
+        </div>
+        <button class="btn darken-2 z-depth-0">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>

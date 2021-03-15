@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Pharma</title>
+  <style type="text/css">
+    #filtru {
+      width: 50%;
+      margin-top: 10px;
+      position: sticky;
+      align-self: center;
+      margin-left: 15%;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      color: saddlebrown;
+    }
+  </style>
+
+
+</head>
+
+<body class="grey lighten-3">
+
+  <!-- NAVBAR -->
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <div class="brand-logo">
+        <h5
+          style="color: white; margin-bottom: 5px; padding: 5px; border-radius: 10px; 
+        background: linear-gradient(180deg, rgba(217,224,224,1) 0%, rgba(165,196,196,1) 50%, rgba(100,119,121,1) 100%);">
+          Pharma
+        </h5>
+      </div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <a href="#" class="red-text modal-trigger" data-target="modal-adaugare">Adaugare</a>
+        </li>
+        <li>
+          <a href="index.html" class="red-text">Medicamente</a>
+        </li>
+        <li>
+          <a href="#" class="red-text" id="logout">Logout</a>
+        </li>
+        </ul>
+    </div>
+  </nav>
+
+  <!-- ADAUGARE MEDICAMENT -->
+  <div id="modal-adaugare" class="modal">
+    <div class="modal-content">
+      <h4>Adaugare medicament</h4><br />
+      <form id="register-form">
+        <div class="input-field">
+          <input type="text" id="denumireMed" required />
+          <label for="denumireMed">Denumire medicament</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="nrBuc" required />
+          <label for="nrBuc">Nr. bucati in stoc</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="nrComp" required />
+          <label for="nrComp">Nr. comprimate</label>
+        </div>
+        <button class="btn darken-2 z-depth-0">Adaugare</button>
+      </form>
+    </div>
+  </div>
+
+  <div style="width: fit-content; margin-left: 15%; margin-top: 1%;">
+    <input id="stergereMedicament" type="text" placeholder="Stergere medicament dupa denumire">
+    <button onclick="stergereMedicament()">
+      Stergeti medicament
+    </button>
+  </div>
+
+  <!-- USER LIST -->
+  <div class="container" style="margin-top: 40px;" id="users">
+    <ul class="collapsible z-depth-0 users" style="border: none;">
+      <li>
+
+      </li>
+    </ul>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/index.js"></script>
+  <script src="scripts/stergere.js"></script>
+
+  <script>
+    // logout
+    const logout = document.querySelector('#logout');
+    logout.addEventListener('click', (e) => {
+      e.preventDefault();
+      auth.signOut().then(() => {
+        window.location.assign("login.html");
+      })
+    });
+  </script>
+
+</body>
+
+</html>
